@@ -1,0 +1,114 @@
+Usage: inkscape [VALG ...] [FIL ...]
+
+Tilgjengelig valgmuligheter:
+  -V, --version                              Skriv ut Inkscapes versjonnummer
+  -z, --without-gui                          Ikke bruk X-tjeneren (prosesser
+                                             bare filer fra konsollen)
+  -g, --with-gui                             Prøv å bruke X-tjeneren (selv
+                                             om $DISPLAY ikke er satt)
+  -f, --file=FILNAVN                         Åpne spesifisert(e) dokument(er)
+                                             (alternativ-streng kan eksluderes)
+  -p, --print=FILNAVN                        Skriv ut dokument(er) til
+                                             spesifisert utdata fil (bruk '|
+                                             program' for videresending)
+  -e, --export-png=FILNAVN                   Eksporter dokument som en PNG-fil
+  -d, --export-dpi=DPI                       Resolution for exporting to
+                                             bitmap and for rasterization of
+                                             filters in PS/EPS/PDF (default 96)
+  -a, --export-area=x0:y0:x1:y1              Exported area in SVG user units
+                                             (default is the page; 0,0 is
+                                             lower-left corner)
+  -D, --export-area-drawing                  Exported area is the entire
+                                             drawing (not page)
+  -C, --export-area-page                     Exported area is the entire page
+      --export-margin=VERDI                  Only for PS/EPS/PDF, sets margin
+                                             in mm around exported area
+                                             (default 0)
+      --export-area-snap                     Fest punktgrafikk eksportområde
+                                             utvendig til den nærmeste
+                                             heltalls verdi (i SVG
+                                             brukerenheter)
+  -w, --export-width=BREDDE                  Bredden på eksporterte
+                                             punktgrafikk i piksler
+                                             (overstyrer eksport-dpi)
+  -h, --export-height=HØYDE                 Høyden på eksporterte
+                                             punktgrafikk i piksler
+                                             (overstyrer eksport-dpi)
+  -i, --export-id=ID                         IDen på objektet som skal
+                                             eksporteres
+  -j, --export-id-only                       Kun eksporter objektet med
+                                             eksport-id, skjul all andre (kun
+                                             med eksport-id)
+  -t, --export-use-hints                     Bruk lagrede filnavn og DPI hint
+                                             ved eksportering (kun med
+                                             eksport-id)
+  -b, --export-background=FARGE              Bakgrunnsfarge av eksporterte
+                                             punktgrafikk (enhver SVG-støttet
+                                             fargestreng)
+  -y, --export-background-opacity=VERDI      Bakgrunnsopasitet av eksporterte
+                                             punktgrafikk (enten 0.0 til 1.0,
+                                             eller 1 to 255)
+  -l, --export-plain-svg=FILNAVN             Eksporter dokument til en vanlig
+                                             SVG-fil (ingen sodipodi eller
+                                             inkscape navneområder)
+  -P, --export-ps=FILNAVN                    Eksporter dokument som en PS-fil
+  -E, --export-eps=FILNAVN                   Eksporter dokument som en EPS-fil
+      --export-ps-level=PS Level             Choose the PostScript Level used
+                                             to export. Possible choices are 2
+                                             and 3 (the default)
+  -A, --export-pdf=FILNAVN                   Eksporter dokumentet til PDF
+      --export-pdf-version=PDF_VERSION       Export PDF to given version.
+                                             (hint: make sure to input the
+                                             exact string found in the PDF
+                                             export dialog, e.g. "1.4" which
+                                             is PDF-a conformant)
+      --export-latex                         Export PDF/PS/EPS without text.
+                                             Besides the PDF/PS/EPS, a LaTeX
+                                             file is exported, putting the
+                                             text on top of the PDF/PS/EPS
+                                             file. Include the result in LaTeX
+                                             like: \input{latexfile.tex}
+  -M, --export-emf=FILNAVN                   Eksporter dokument som en
+                                             Enhanced Metafile (EMF)-fil
+  -m, --export-wmf=FILNAVN                   Export document to a Windows
+                                             Metafile (WMF) File
+  -T, --export-text-to-path                  Convert text object to paths on
+                                             export (PS, EPS, PDF, SVG)
+      --export-ignore-filters                Tegn opp filtrerte objekter uten
+                                             filter i stedet for å
+                                             rasterisere (PS, EPS, PDF)
+  -X, --query-x                              Forespørr X koordinatene til
+                                             tegningen eller, om spesifisert,
+                                             til et objekt med --query-id
+  -Y, --query-y                              Forespørr Y koordinatene til
+                                             tegningen eller, om spesifisert,
+                                             til et objekt med --query-id
+  -W, --query-width                          Forespørr bredden til tegningen
+                                             eller, om spesifisert, til et
+                                             objekt med --query-id
+  -H, --query-height                         Forespørr høyden til tegningen
+                                             eller, om spesifisert, til et
+                                             objekt med --query-id
+  -S, --query-all                            List opp id,x,y,b,h for alle
+                                             objekter
+  -I, --query-id=ID                          IDen av objektet som har sine
+                                             dimensjoner forespurt
+  -x, --extension-directory                  Skriv ut utvidelseskatalogen og
+                                             avslutt
+      --vacuum-defs                          Fjern ubrukte definisjoner fra
+                                             defs seksjonen(e) i dokumentet
+      --verb-list                            List opp IDen til alle verb i
+                                             Inkscape
+      --verb=VERB-ID                         Verb som skal kalles når
+                                             Incskape åpnes
+      --select=OBJECT-ID                     Objekt ID som skal velges når
+                                             Inkscape åpner
+      --shell                                Start Inkscape i et interaktivt
+                                             skall
+      --no-convert-text-baseline-spacing     Do not fix legacy (pre-0.92)
+                                             files' text baseline spacing on
+                                             opening.
+
+Help options:
+  -?, --help                                 Show this help message
+      --usage                                Display brief usage message
