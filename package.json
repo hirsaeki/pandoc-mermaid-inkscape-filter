@@ -1,6 +1,6 @@
 {
   "name": "pandoc-mermaid-inkscape-filter",
-  "version": "0.0.1",
+  "version": "0.0.0",
   "description": "pandoc filter for generating vector images from embedded mermaid.",
   "main": "index.js",
   "scripts": {
@@ -10,8 +10,12 @@
   "author": "Lars Wilhelmsen <lars@sral.org>",
   "license": "MIT",
   "dependencies": {
+    "jsdom": "^11.2.0",
+    "mermaid": "^7.1.0",
     "pandoc-filter": "^0.1.8",
-    "shelljs": "^0.7.8"
+    "rimraf": "^2.6.2",
+    "shelljs": "^0.7.8",
+    "tmp": "0.0.33"
   },
   "preferGlobal": true,
   "bin": {
