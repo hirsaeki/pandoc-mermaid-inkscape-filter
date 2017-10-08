@@ -1,40 +1,64 @@
 #!/usr/bin/env node
 
-const fs = require('fs');
-const pf = require('pandoc-filter');
-const shx = require('shelljs');
-const tmp = require('tmp');
-const rm = require('rimraf');
-const mermaid = require('mermaid/src/mermaidAPI').default;
-const jsdom = require("jsdom");
-const { JSDOM } = jsdom;
-const { window } = new JSDOM(`<!DOCTYPE html>`);
-const $ = require('jquery')(window);
+const fs = require('fs')
+const pf = require('pandoc-filter-async')
+// const shx = require('shelljs')
+// const tmp = require('tmp')
+const puppeteer = require('puppeteer')
+const path = require('path')
+const crypto = require('crypto')
 
-const mermaidInkscapeFilter = (type, value) => {
-    // Not a CodeBlock -> skip.
-    if (type !== 'CodeBlock') return null;
+const magic = async (definition, filename) => {
+  const browser = await puppeteer.launch()
+  const page = await browser.newPage()
+  const width = 300
+  const height = 300
+  page.setViewport({ width, height })
+  await page.goto(`file://${path.join(__dirname, 'index.html')}`)
 
-    const cls = value[0][1]; // TODO find out the structure behind this.
-    // Not a mermaid code block -> skip.
-    if (0 > cls.indexOf('mermaid')) return null;
+  const theme = 'forest'
+  const output = `${__dirname}/images/${filename}.svg`
 
-    const code = value[1];
-   
-    mermaid.initialize({
-            startOnLoad:true
-        });
-        $(function(){
-              var cb = function(svgGraph) {
-                const mfile = tmp.fileSync({ postfix: '.svg' });
-               fs.writeSync(mfile, code);
-              };
-            mermaidAPI.render('id1',code,cb);
-        );
+  // const definition = fs.readFileSync(input, 'utf-8')
+  await page.$eval('#container', (container, definition, theme) => {
+    container.innerHTML = definition
+    window.mermaid_config = { theme }
+    window.mermaid.init(undefined, container)
+  }, definition, theme)
 
-    return pf.Div(['',[],[]], [
-        pf.Image(['image.png',[],[]],[])
-    ]);
+  if (output.endsWith('svg')) {
+    const svg = await page.$eval('#container', container => container.innerHTML)
+    fs.writeFileSync(output, svg)
+  } else { // png
+    const clip = await page.$eval('svg', svg => {
+      const rect = svg.getBoundingClientRect()
+      return { x: rect.left, y: rect.top, width: rect.width, height: rect.height }
+    })
+    await page.screenshot({ path: output, clip })
+  }
+
+  browser.close()
 }
 
-pf.toJSONFilter(mermaidInkscapeFilter);
+export const filter = async (type, value) => {
+    // Not a CodeBlock -> skip.
+  if (type !== 'CodeBlock') return null
+
+  const cls = value[0][1] // TODO find out the structure behind this.
+    // Not a mermaid code block -> skip.
+  if (cls.indexOf('mermaid') < 0) return null
+  const code = value[1]
+
+    // DO MAGIC
+  const filename = crypto.createHash('sha1').update(code, 'utf-8').digest('hex')
+  await magic(code, filename)
+
+  // return pf.Para([
+  return pf.Image(
+      ['', [], []],
+      [],
+      [`${__dirname}/images/${filename}.svg`, ''])
+  // ])
+}
+
+pf.toJSONFilter(filter)

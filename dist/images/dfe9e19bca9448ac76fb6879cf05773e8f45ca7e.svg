@@ -1,0 +1,360 @@
+<svg id="mermaidChart0" width="100%" xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="0 0 284 484"><style>
+  /* Flowchart variables */
+/* Sequence Diagram variables */
+/* Gantt chart variables */
+.mermaid .label {
+  font-family: 'trebuchet ms', verdana, arial;
+  color: #333;
+}
+.node rect,
+.node circle,
+.node ellipse,
+.node polygon {
+  fill: #cde498;
+  stroke: #13540c;
+  stroke-width: 1px;
+}
+.arrowheadPath {
+  fill: green;
+}
+.edgePath .path {
+  stroke: green;
+  stroke-width: 1.5px;
+}
+.edgeLabel {
+  background-color: #e8e8e8;
+}
+.cluster rect {
+  fill: #cdffb2 !important;
+  rx: 4 !important;
+  stroke: #6eaa49 !important;
+  stroke-width: 1px !important;
+}
+.cluster text {
+  fill: #333;
+}
+.actor {
+  stroke: #13540c;
+  fill: #cde498;
+}
+text.actor {
+  fill: black;
+  stroke: none;
+}
+.actor-line {
+  stroke: grey;
+}
+.messageLine0 {
+  stroke-width: 1.5;
+  stroke-dasharray: "2 2";
+  marker-end: "url(#arrowhead)";
+  stroke: #333;
+}
+.messageLine1 {
+  stroke-width: 1.5;
+  stroke-dasharray: "2 2";
+  stroke: #333;
+}
+#arrowhead {
+  fill: #333;
+}
+#crosshead path {
+  fill: #333 !important;
+  stroke: #333 !important;
+}
+.messageText {
+  fill: #333;
+  stroke: none;
+}
+.labelBox {
+  stroke: #326932;
+  fill: #cde498;
+}
+.labelText {
+  fill: black;
+  stroke: none;
+}
+.loopText {
+  fill: black;
+  stroke: none;
+}
+.loopLine {
+  stroke-width: 2;
+  stroke-dasharray: "2 2";
+  marker-end: "url(#arrowhead)";
+  stroke: #326932;
+}
+.note {
+  stroke: #6eaa49;
+  fill: #fff5ad;
+}
+.noteText {
+  fill: black;
+  stroke: none;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-size: 14px;
+}
+/** Section styling */
+.section {
+  stroke: none;
+  opacity: 0.2;
+}
+.section0 {
+  fill: #6eaa49;
+}
+.section2 {
+  fill: #6eaa49;
+}
+.section1,
+.section3 {
+  fill: white;
+  opacity: 0.2;
+}
+.sectionTitle0 {
+  fill: #333;
+}
+.sectionTitle1 {
+  fill: #333;
+}
+.sectionTitle2 {
+  fill: #333;
+}
+.sectionTitle3 {
+  fill: #333;
+}
+.sectionTitle {
+  text-anchor: start;
+  font-size: 11px;
+  text-height: 14px;
+}
+/* Grid and axis */
+.grid .tick {
+  stroke: lightgrey;
+  opacity: 0.3;
+  shape-rendering: crispEdges;
+}
+.grid path {
+  stroke-width: 0;
+}
+/* Today line */
+.today {
+  fill: none;
+  stroke: red;
+  stroke-width: 2px;
+}
+/* Task styling */
+/* Default task */
+.task {
+  stroke-width: 2;
+}
+.taskText {
+  text-anchor: middle;
+  font-size: 11px;
+}
+.taskTextOutsideRight {
+  fill: black;
+  text-anchor: start;
+  font-size: 11px;
+}
+.taskTextOutsideLeft {
+  fill: black;
+  text-anchor: end;
+  font-size: 11px;
+}
+/* Specific task settings for the sections*/
+.taskText0,
+.taskText1,
+.taskText2,
+.taskText3 {
+  fill: white;
+}
+.task0,
+.task1,
+.task2,
+.task3 {
+  fill: #487e3a;
+  stroke: #13540c;
+}
+.taskTextOutside0,
+.taskTextOutside2 {
+  fill: black;
+}
+.taskTextOutside1,
+.taskTextOutside3 {
+  fill: black;
+}
+/* Active task */
+.active0,
+.active1,
+.active2,
+.active3 {
+  fill: #cde498;
+  stroke: #13540c;
+}
+.activeText0,
+.activeText1,
+.activeText2,
+.activeText3 {
+  fill: black !important;
+}
+/* Completed task */
+.done0,
+.done1,
+.done2,
+.done3 {
+  stroke: grey;
+  fill: lightgrey;
+  stroke-width: 2;
+}
+.doneText0,
+.doneText1,
+.doneText2,
+.doneText3 {
+  fill: black !important;
+}
+/* Tasks on the critical line */
+.crit0,
+.crit1,
+.crit2,
+.crit3 {
+  stroke: #ff8888;
+  fill: red;
+  stroke-width: 2;
+}
+.activeCrit0,
+.activeCrit1,
+.activeCrit2,
+.activeCrit3 {
+  stroke: #ff8888;
+  fill: #cde498;
+  stroke-width: 2;
+}
+.doneCrit0,
+.doneCrit1,
+.doneCrit2,
+.doneCrit3 {
+  stroke: #ff8888;
+  fill: lightgrey;
+  stroke-width: 2;
+  cursor: pointer;
+  shape-rendering: crispEdges;
+}
+.doneCritText0,
+.doneCritText1,
+.doneCritText2,
+.doneCritText3 {
+  fill: black !important;
+}
+.activeCritText0,
+.activeCritText1,
+.activeCritText2,
+.activeCritText3 {
+  fill: black !important;
+}
+.titleText {
+  text-anchor: middle;
+  font-size: 18px;
+  fill: black;
+}
+g.classGroup text {
+  fill: #13540c;
+  stroke: none;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-size: 10px;
+}
+g.classGroup rect {
+  fill: #cde498;
+  stroke: #13540c;
+}
+g.classGroup line {
+  stroke: #13540c;
+  stroke-width: 1;
+}
+svg .classLabel .box {
+  stroke: none;
+  stroke-width: 0;
+  fill: #cde498;
+  opacity: 0.5;
+}
+svg .classLabel .label {
+  fill: #13540c;
+  font-size: 10px;
+}
+.relation {
+  stroke: #13540c;
+  stroke-width: 1;
+  fill: none;
+}
+.composition {
+  fill: #13540c;
+  stroke: #13540c;
+  stroke-width: 1;
+}
+#compositionStart {
+  fill: #13540c;
+  stroke: #13540c;
+  stroke-width: 1;
+}
+#compositionEnd {
+  fill: #13540c;
+  stroke: #13540c;
+  stroke-width: 1;
+}
+.aggregation {
+  fill: #cde498;
+  stroke: #13540c;
+  stroke-width: 1;
+}
+#aggregationStart {
+  fill: #cde498;
+  stroke: #13540c;
+  stroke-width: 1;
+}
+#aggregationEnd {
+  fill: #cde498;
+  stroke: #13540c;
+  stroke-width: 1;
+}
+#dependencyStart {
+  fill: #13540c;
+  stroke: #13540c;
+  stroke-width: 1;
+}
+#dependencyEnd {
+  fill: #13540c;
+  stroke: #13540c;
+  stroke-width: 1;
+}
+#extensionStart {
+  fill: #13540c;
+  stroke: #13540c;
+  stroke-width: 1;
+}
+#extensionEnd {
+  fill: #13540c;
+  stroke: #13540c;
+  stroke-width: 1;
+}
+.node text {
+  font-family: 'trebuchet ms', verdana, arial;
+  font-size: 14px;
+}
+div.mermaidTooltip {
+  position: absolute;
+  text-align: center;
+  max-width: 200px;
+  padding: 2px;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-size: 12px;
+  background: #cdffb2;
+  border: 1px solid #6eaa49;
+  border-radius: 2px;
+  pointer-events: none;
+  z-index: 100;
+}
+
+svg {
+  color: rgb(0, 0, 0);
+  font: normal normal 400 normal 16px / normal "Times New Roman";
+}
+  </style><g></g><g class="grid" transform="translate(75, 434)"><g class="tick" transform="translate(0,0)" style="opacity: 1;"><line y2="-399" x2="0"></line><text dy="1em" y="3" x="0" fill="#000" stroke="none" font-size="10" style="text-anchor: middle;">w. 01</text></g><g class="tick" transform="translate(59,0)" style="opacity: 1;"><line y2="-399" x2="0"></line><text dy="1em" y="3" x="0" fill="#000" stroke="none" font-size="10" style="text-anchor: middle;">w. 02</text></g><g class="tick" transform="translate(117,0)" style="opacity: 1;"><line y2="-399" x2="0"></line><text dy="1em" y="3" x="0" fill="#000" stroke="none" font-size="10" style="text-anchor: middle;">w. 03</text></g><path class="domain" d="M0,0V0H134V0"></path></g><g><rect x="0" y="48" width="246.5" height="24" class="section section0"></rect><rect x="0" y="72" width="246.5" height="24" class="section section0"></rect><rect x="0" y="96" width="246.5" height="24" class="section section0"></rect><rect x="0" y="120" width="246.5" height="24" class="section section0"></rect><rect x="0" y="144" width="246.5" height="24" class="section section1"></rect><rect x="0" y="168" width="246.5" height="24" class="section section1"></rect><rect x="0" y="192" width="246.5" height="24" class="section section1"></rect><rect x="0" y="216" width="246.5" height="24" class="section section1"></rect><rect x="0" y="240" width="246.5" height="24" class="section section1"></rect><rect x="0" y="264" width="246.5" height="24" class="section section1"></rect><rect x="0" y="288" width="246.5" height="24" class="section section2"></rect><rect x="0" y="312" width="246.5" height="24" class="section section2"></rect><rect x="0" y="336" width="246.5" height="24" class="section section2"></rect><rect x="0" y="360" width="246.5" height="24" class="section section0"></rect><rect x="0" y="384" width="246.5" height="24" class="section section0"></rect><rect x="0" y="408" width="246.5" height="24" class="section section0"></rect></g><g><rect rx="3" ry="3" x="75" y="50" width="17" height="20" class="task  done0"></rect><rect rx="3" ry="3" x="100" y="74" width="25" height="20" class="task  active0"></rect><rect rx="3" ry="3" x="125" y="98" width="42" height="20" class="task  task0"></rect><rect rx="3" ry="3" x="167" y="122" width="42" height="20" class="task  task0"></rect><rect rx="3" ry="3" x="75" y="146" width="8" height="20" class="task  doneCrit1"></rect><rect rx="3" ry="3" x="92" y="170" width="17" height="20" class="task  doneCrit1"></rect><rect rx="3" ry="3" x="109" y="194" width="25" height="20" class="task  activeCrit1"></rect><rect rx="3" ry="3" x="134" y="218" width="42" height="20" class="task  crit1"></rect><rect rx="3" ry="3" x="176" y="242" width="16" height="20" class="task  task1"></rect><rect rx="3" ry="3" x="192" y="266" width="9" height="20" class="task  task1"></rect><rect rx="3" ry="3" x="92" y="290" width="25" height="20" class="task  active2"></rect><rect rx="3" ry="3" x="117" y="314" width="7" height="20" class="task  task2"></rect><rect rx="3" ry="3" x="117" y="338" width="17" height="20" class="task  task2"></rect><rect rx="3" ry="3" x="134" y="362" width="25" height="20" class="task  task0"></rect><rect rx="3" ry="3" x="159" y="386" width="7" height="20" class="task  task0"></rect><rect rx="3" ry="3" x="166" y="410" width="16" height="20" class="task  task0"></rect><text font-size="11" x="97" y="63.5" text-height="20" class="taskTextOutsideRight taskTextOutside0  doneText0">Completed task            </text><text font-size="11" x="130" y="87.5" text-height="20" class="taskTextOutsideRight taskTextOutside0 activeText0">Active task               </text><text font-size="11" x="172" y="111.5" text-height="20" class="taskTextOutsideRight taskTextOutside0 ">Future task               </text><text font-size="11" x="162" y="135.5" text-height="20" class="taskTextOutsideLeft taskTextOutside0 ">Future task2               </text><text font-size="11" x="88" y="159.5" text-height="20" class="taskTextOutsideRight taskTextOutside1  doneCritText1">Completed task in the critical line </text><text font-size="11" x="114" y="183.5" text-height="20" class="taskTextOutsideRight taskTextOutside1  doneCritText1">Implement parser and jison          </text><text font-size="11" x="139" y="207.5" text-height="20" class="taskTextOutsideRight taskTextOutside1 activeCritText1 critText1">Create tests for parser             </text><text font-size="11" x="129" y="231.5" text-height="20" class="taskTextOutsideLeft taskTextOutside1  critText1">Future task in critical line        </text><text font-size="11" x="171" y="255.5" text-height="20" class="taskTextOutsideLeft taskTextOutside1 ">Create tests for renderer           </text><text font-size="11" x="187" y="279.5" text-height="20" class="taskTextOutsideLeft taskTextOutside1 ">Add to mermaid                      </text><text font-size="11" x="122" y="303.5" text-height="20" class="taskTextOutsideRight taskTextOutside2 activeText2">Describe gantt syntax               </text><text font-size="11" x="112" y="327.5" text-height="20" class="taskTextOutsideLeft taskTextOutside2 ">Add gantt diagram to demo page      </text><text font-size="11" x="112" y="351.5" text-height="20" class="taskTextOutsideLeft taskTextOutside2 ">Add another diagram to demo page    </text><text font-size="11" x="129" y="375.5" text-height="20" class="taskTextOutsideLeft taskTextOutside0 ">Describe gantt syntax               </text><text font-size="11" x="154" y="399.5" text-height="20" class="taskTextOutsideLeft taskTextOutside0 ">Add gantt diagram to demo page      </text><text font-size="11" x="161" y="423.5" text-height="20" class="taskTextOutsideLeft taskTextOutside0 ">Add another diagram to demo page    </text></g><g><text x="10" y="98" class="sectionTitle sectionTitle0">A section</text><text x="10" y="218" class="sectionTitle sectionTitle1">Critical tasks</text><text x="10" y="326" class="sectionTitle sectionTitle2">Documentation</text><text x="10" y="398" class="sectionTitle sectionTitle0">Last section</text></g><g class="today"><line x1="11562" x2="11562" y1="25" y2="459" class="today"></line></g><text x="142" y="25" class="titleText">Adding GANTT diagram to mermaid</text></svg>

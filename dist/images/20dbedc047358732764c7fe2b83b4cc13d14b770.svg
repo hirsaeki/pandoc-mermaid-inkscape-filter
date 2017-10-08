@@ -1,0 +1,360 @@
+<svg id="mermaidChart0" width="100%" xmlns="http://www.w3.org/2000/svg" height="150"><style>
+  /* Flowchart variables */
+/* Sequence Diagram variables */
+/* Gantt chart variables */
+.mermaid .label {
+  font-family: 'trebuchet ms', verdana, arial;
+  color: #333;
+}
+.node rect,
+.node circle,
+.node ellipse,
+.node polygon {
+  fill: #cde498;
+  stroke: #13540c;
+  stroke-width: 1px;
+}
+.arrowheadPath {
+  fill: green;
+}
+.edgePath .path {
+  stroke: green;
+  stroke-width: 1.5px;
+}
+.edgeLabel {
+  background-color: #e8e8e8;
+}
+.cluster rect {
+  fill: #cdffb2 !important;
+  rx: 4 !important;
+  stroke: #6eaa49 !important;
+  stroke-width: 1px !important;
+}
+.cluster text {
+  fill: #333;
+}
+.actor {
+  stroke: #13540c;
+  fill: #cde498;
+}
+text.actor {
+  fill: black;
+  stroke: none;
+}
+.actor-line {
+  stroke: grey;
+}
+.messageLine0 {
+  stroke-width: 1.5;
+  stroke-dasharray: "2 2";
+  marker-end: "url(#arrowhead)";
+  stroke: #333;
+}
+.messageLine1 {
+  stroke-width: 1.5;
+  stroke-dasharray: "2 2";
+  stroke: #333;
+}
+#arrowhead {
+  fill: #333;
+}
+#crosshead path {
+  fill: #333 !important;
+  stroke: #333 !important;
+}
+.messageText {
+  fill: #333;
+  stroke: none;
+}
+.labelBox {
+  stroke: #326932;
+  fill: #cde498;
+}
+.labelText {
+  fill: black;
+  stroke: none;
+}
+.loopText {
+  fill: black;
+  stroke: none;
+}
+.loopLine {
+  stroke-width: 2;
+  stroke-dasharray: "2 2";
+  marker-end: "url(#arrowhead)";
+  stroke: #326932;
+}
+.note {
+  stroke: #6eaa49;
+  fill: #fff5ad;
+}
+.noteText {
+  fill: black;
+  stroke: none;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-size: 14px;
+}
+/** Section styling */
+.section {
+  stroke: none;
+  opacity: 0.2;
+}
+.section0 {
+  fill: #6eaa49;
+}
+.section2 {
+  fill: #6eaa49;
+}
+.section1,
+.section3 {
+  fill: white;
+  opacity: 0.2;
+}
+.sectionTitle0 {
+  fill: #333;
+}
+.sectionTitle1 {
+  fill: #333;
+}
+.sectionTitle2 {
+  fill: #333;
+}
+.sectionTitle3 {
+  fill: #333;
+}
+.sectionTitle {
+  text-anchor: start;
+  font-size: 11px;
+  text-height: 14px;
+}
+/* Grid and axis */
+.grid .tick {
+  stroke: lightgrey;
+  opacity: 0.3;
+  shape-rendering: crispEdges;
+}
+.grid path {
+  stroke-width: 0;
+}
+/* Today line */
+.today {
+  fill: none;
+  stroke: red;
+  stroke-width: 2px;
+}
+/* Task styling */
+/* Default task */
+.task {
+  stroke-width: 2;
+}
+.taskText {
+  text-anchor: middle;
+  font-size: 11px;
+}
+.taskTextOutsideRight {
+  fill: black;
+  text-anchor: start;
+  font-size: 11px;
+}
+.taskTextOutsideLeft {
+  fill: black;
+  text-anchor: end;
+  font-size: 11px;
+}
+/* Specific task settings for the sections*/
+.taskText0,
+.taskText1,
+.taskText2,
+.taskText3 {
+  fill: white;
+}
+.task0,
+.task1,
+.task2,
+.task3 {
+  fill: #487e3a;
+  stroke: #13540c;
+}
+.taskTextOutside0,
+.taskTextOutside2 {
+  fill: black;
+}
+.taskTextOutside1,
+.taskTextOutside3 {
+  fill: black;
+}
+/* Active task */
+.active0,
+.active1,
+.active2,
+.active3 {
+  fill: #cde498;
+  stroke: #13540c;
+}
+.activeText0,
+.activeText1,
+.activeText2,
+.activeText3 {
+  fill: black !important;
+}
+/* Completed task */
+.done0,
+.done1,
+.done2,
+.done3 {
+  stroke: grey;
+  fill: lightgrey;
+  stroke-width: 2;
+}
+.doneText0,
+.doneText1,
+.doneText2,
+.doneText3 {
+  fill: black !important;
+}
+/* Tasks on the critical line */
+.crit0,
+.crit1,
+.crit2,
+.crit3 {
+  stroke: #ff8888;
+  fill: red;
+  stroke-width: 2;
+}
+.activeCrit0,
+.activeCrit1,
+.activeCrit2,
+.activeCrit3 {
+  stroke: #ff8888;
+  fill: #cde498;
+  stroke-width: 2;
+}
+.doneCrit0,
+.doneCrit1,
+.doneCrit2,
+.doneCrit3 {
+  stroke: #ff8888;
+  fill: lightgrey;
+  stroke-width: 2;
+  cursor: pointer;
+  shape-rendering: crispEdges;
+}
+.doneCritText0,
+.doneCritText1,
+.doneCritText2,
+.doneCritText3 {
+  fill: black !important;
+}
+.activeCritText0,
+.activeCritText1,
+.activeCritText2,
+.activeCritText3 {
+  fill: black !important;
+}
+.titleText {
+  text-anchor: middle;
+  font-size: 18px;
+  fill: black;
+}
+g.classGroup text {
+  fill: #13540c;
+  stroke: none;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-size: 10px;
+}
+g.classGroup rect {
+  fill: #cde498;
+  stroke: #13540c;
+}
+g.classGroup line {
+  stroke: #13540c;
+  stroke-width: 1;
+}
+svg .classLabel .box {
+  stroke: none;
+  stroke-width: 0;
+  fill: #cde498;
+  opacity: 0.5;
+}
+svg .classLabel .label {
+  fill: #13540c;
+  font-size: 10px;
+}
+.relation {
+  stroke: #13540c;
+  stroke-width: 1;
+  fill: none;
+}
+.composition {
+  fill: #13540c;
+  stroke: #13540c;
+  stroke-width: 1;
+}
+#compositionStart {
+  fill: #13540c;
+  stroke: #13540c;
+  stroke-width: 1;
+}
+#compositionEnd {
+  fill: #13540c;
+  stroke: #13540c;
+  stroke-width: 1;
+}
+.aggregation {
+  fill: #cde498;
+  stroke: #13540c;
+  stroke-width: 1;
+}
+#aggregationStart {
+  fill: #cde498;
+  stroke: #13540c;
+  stroke-width: 1;
+}
+#aggregationEnd {
+  fill: #cde498;
+  stroke: #13540c;
+  stroke-width: 1;
+}
+#dependencyStart {
+  fill: #13540c;
+  stroke: #13540c;
+  stroke-width: 1;
+}
+#dependencyEnd {
+  fill: #13540c;
+  stroke: #13540c;
+  stroke-width: 1;
+}
+#extensionStart {
+  fill: #13540c;
+  stroke: #13540c;
+  stroke-width: 1;
+}
+#extensionEnd {
+  fill: #13540c;
+  stroke: #13540c;
+  stroke-width: 1;
+}
+.node text {
+  font-family: 'trebuchet ms', verdana, arial;
+  font-size: 14px;
+}
+div.mermaidTooltip {
+  position: absolute;
+  text-align: center;
+  max-width: 200px;
+  padding: 2px;
+  font-family: 'trebuchet ms', verdana, arial;
+  font-size: 12px;
+  background: #cdffb2;
+  border: 1px solid #6eaa49;
+  border-radius: 2px;
+  pointer-events: none;
+  z-index: 100;
+}
+
+svg {
+  color: rgb(0, 0, 0);
+  font: normal normal 400 normal 16px / normal "Times New Roman";
+}
+  </style><g></g><defs><g id="def-commit"><circle r="10" cx="0" cy="0"></circle><foreignObject width="75" height="100" x="-25" y="0" class="node-label" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><p></p></foreignObject></g></defs><g id="node-724f14e" class="commit" transform="translate(800, 50)" fill="yellow" stroke="grey" stroke-width="2"><circle r="10" cx="0" cy="0"></circle><foreignObject width="75" height="100" x="-25" y="0" class="node-label" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><p><span class="branch-label">master, </span><span class="commit-id">724f14e</span></p></foreignObject></g><g id="node-3c1c80a" class="commit" transform="translate(650, 50)" fill="yellow" stroke="grey" stroke-width="2"><circle r="10" cx="0" cy="0"></circle><foreignObject width="75" height="100" x="-25" y="0" class="node-label" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><p><span class="commit-id">3c1c80a</span></p></foreignObject></g><g id="node-6a380c4" class="commit" transform="translate(500, 50)" fill="yellow" stroke="grey" stroke-width="2"><circle r="10" cx="0" cy="0"></circle><foreignObject width="75" height="100" x="-25" y="0" class="node-label" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><p><span class="commit-id">6a380c4</span></p></foreignObject></g><g id="node-92166f2" class="commit" transform="translate(50, 50)" fill="yellow" stroke="grey" stroke-width="2"><circle r="10" cx="0" cy="0"></circle><foreignObject width="75" height="100" x="-25" y="0" class="node-label" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><p><span class="commit-id">92166f2</span></p></foreignObject></g><g id="node-c2f8718" class="commit" transform="translate(350, 100)" fill="yellow" stroke="grey" stroke-width="2"><circle r="10" cx="0" cy="0"></circle><foreignObject width="75" height="100" x="-25" y="0" class="node-label" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><p><span class="branch-label">newbranch, </span><span class="commit-id">c2f8718</span></p></foreignObject></g><g id="node-b74c57c" class="commit" transform="translate(200, 100)" fill="yellow" stroke="grey" stroke-width="2"><circle r="10" cx="0" cy="0"></circle><foreignObject width="75" height="100" x="-25" y="0" class="node-label" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><p><span class="commit-id">b74c57c</span></p></foreignObject></g><path d="M790,50L777.4999999999999,49.999999999999986C765,49.99999999999999,740,49.99999999999999,727.4999999999999,49.999999999999986C715,49.99999999999999,715,49.99999999999999,705.8333333333333,49.999999999999986C696.6666666666666,49.99999999999999,678.3333333333333,49.99999999999999,669.1666666666666,49.999999999999986L660,50" style="stroke: rgb(68, 47, 116); stroke-width: 4; fill: none;"></path><path d="M640,100L360,100" style="stroke: rgb(152, 51, 81); stroke-width: 4; fill: none;"></path><path d="M790,50L777.4999999999999,49.999999999999986C765,49.99999999999999,740,49.99999999999999,727.4999999999999,58.33333333333332C715,66.66666666666666,715,83.33333333333331,702.4999999999999,91.66666666666666C690,99.99999999999999,665,99.99999999999999,652.4999999999999,99.99999999999997L640,100" style="stroke: rgb(152, 51, 81); stroke-width: 4; fill: none;"></path><path d="M340,100L327.5,99.99999999999997C315,99.99999999999999,290,99.99999999999999,277.5,99.99999999999997C265,99.99999999999999,265,99.99999999999999,255.83333333333331,99.99999999999997C246.66666666666666,99.99999999999999,228.33333333333331,99.99999999999999,219.16666666666666,99.99999999999997L210,100" style="stroke: rgb(152, 51, 81); stroke-width: 4; fill: none;"></path><path d="M190,100L177.49999999999997,99.99999999999997C165,99.99999999999999,140,99.99999999999999,127.49999999999997,91.66666666666664C114.99999999999999,83.33333333333331,114.99999999999999,66.66666666666666,105.83333333333331,58.33333333333333C96.66666666666666,49.99999999999999,78.33333333333333,49.99999999999999,69.16666666666666,49.999999999999986L60,50" style="stroke: rgb(152, 51, 81); stroke-width: 4; fill: none;"></path><path d="M640,50L627.4999999999999,49.999999999999986C615,49.99999999999999,590,49.99999999999999,577.4999999999999,49.999999999999986C565,49.99999999999999,565,49.99999999999999,555.8333333333333,49.999999999999986C546.6666666666666,49.99999999999999,528.3333333333333,49.99999999999999,519.1666666666666,49.999999999999986L510,50" style="stroke: rgb(68, 47, 116); stroke-width: 4; fill: none;"></path><path d="M340,50L60,50" style="stroke: rgb(68, 47, 116); stroke-width: 4; fill: none;"></path><path d="M490,50L477.4999999999999,49.999999999999986C464.99999999999994,49.99999999999999,439.99999999999994,49.99999999999999,427.4999999999999,49.999999999999986C414.99999999999994,49.99999999999999,414.99999999999994,49.99999999999999,402.49999999999994,49.999999999999986C389.99999999999994,49.99999999999999,365,49.99999999999999,352.5,49.999999999999986L340,50" style="stroke: rgb(68, 47, 116); stroke-width: 4; fill: none;"></path></svg>
