@@ -7,6 +7,7 @@ Object.defineProperty(exports, "__esModule", {
 
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
 
+const Sync = require('sync');
 const fs = require('fs');
 const pf = require('pandoc-filter-async');
 // const shx = require('shelljs')
@@ -25,7 +26,7 @@ const magic = (() => {
     yield page.goto(`file://${path.join(__dirname, 'index.html')}`);
 
     const theme = 'forest';
-    const output = `${__dirname}/images/${filename}.svg`;
+    const output = `${__dirname}\\images\\${filename}.svg`;
 
     // const definition = fs.readFileSync(input, 'utf-8')
     yield page.$eval('#container', function (container, definition, theme) {
@@ -56,28 +57,24 @@ const magic = (() => {
   };
 })();
 
-const filter = exports.filter = (() => {
-  var _ref2 = _asyncToGenerator(function* (type, value) {
-    // Not a CodeBlock -> skip.
-    if (type !== 'CodeBlock') return null;
+const filter = exports.filter = (type, value) => {
+  // Not a CodeBlock -> skip.
+  if (type !== 'CodeBlock') return null;
 
-    const cls = value[0][1]; // TODO find out the structure behind this.
-    // Not a mermaid code block -> skip.
-    if (cls.indexOf('mermaid') < 0) return null;
-    const code = value[1];
+  const cls = value[0][1]; // TODO find out the structure behind this.
+  // Not a mermaid code block -> skip.
+  if (cls.indexOf('mermaid') < 0) return null;
+  const code = value[1];
 
-    // DO MAGIC
-    const filename = crypto.createHash('sha1').update(code, 'utf-8').digest('hex');
-    yield magic(code, filename);
-
-    // return pf.Para([
-    return pf.Image(['', [], []], [], [`${__dirname}/images/${filename}.svg`, '']);
-    // ])
+  // DO MAGIC
+  const filename = crypto.createHash('sha1').update(code, 'utf-8').digest('hex');
+  Sync(() => {
+    magic(code, filename);
   });
 
-  return function filter(_x3, _x4) {
-    return _ref2.apply(this, arguments);
-  };
-})();
+  // return pf.Para([
+  return pf.Image(['', [], []], [], [`${__dirname}\\images\\${filename}.svg`, '']);
+  // ])
+};
 
 pf.toJSONFilter(filter);

@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+const Sync = require('sync')
 const fs = require('fs')
 const pf = require('pandoc-filter-async')
 // const shx = require('shelljs')
@@ -17,7 +18,7 @@ const magic = async (definition, filename) => {
   await page.goto(`file://${path.join(__dirname, 'index.html')}`)
 
   const theme = 'forest'
-  const output = `${__dirname}/images/${filename}.svg`
+  const output = `${__dirname}\\images\\${filename}.svg`
 
   // const definition = fs.readFileSync(input, 'utf-8')
   await page.$eval('#container', (container, definition, theme) => {
@@ -40,7 +41,7 @@ const magic = async (definition, filename) => {
   browser.close()
 }
 
-export const filter = async (type, value) => {
+export const filter = (type, value) => {
     // Not a CodeBlock -> skip.
   if (type !== 'CodeBlock') return null
 
@@ -51,13 +52,15 @@ export const filter = async (type, value) => {
 
     // DO MAGIC
   const filename = crypto.createHash('sha1').update(code, 'utf-8').digest('hex')
-  await magic(code, filename)
+  Sync(() => {
+    magic(code, filename)
+  })
 
   // return pf.Para([
   return pf.Image(
       ['', [], []],
       [],
-      [`${__dirname}/images/${filename}.svg`, ''])
+      [`${__dirname}\\images\\${filename}.svg`, ''])
   // ])
 }
 

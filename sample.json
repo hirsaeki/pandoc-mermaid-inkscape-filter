@@ -1,0 +1,65 @@
+{
+  "pandoc-api-version": [
+    1,
+    17,
+    0,
+    4
+  ],
+  "meta": {},
+  "blocks": [
+    {
+      "t": "Header",
+      "c": [
+        1,
+        [
+          "title",
+          [],
+          []
+        ],
+        [
+          {
+            "t": "Str",
+            "c": "Title"
+          }
+        ]
+      ]
+    },
+    {
+      "t": "Header",
+      "c": [
+        2,
+        [
+          "sub-title",
+          [],
+          []
+        ],
+        [
+          {
+            "t": "Str",
+            "c": "Sub"
+          },
+          {
+            "t": "Space"
+          },
+          {
+            "t": "Str",
+            "c": "title"
+          }
+        ]
+      ]
+    },
+    {
+      "t": "CodeBlock",
+      "c": [
+        [
+          "",
+          [
+            "mermaid"
+          ],
+          []
+        ],
+        "sequenceDiagram\n  participant Alice\n  participant Bob\n  Alice->>John: Hello John, how are you?\n  loop Healthcheck\n      John->>John: Fight against hypochondria\n  end\n  Note right of John: Rational thoughts prevail...\n  John-->>Alice: Great!\n  John->>Bob: How about you?\n  Bob-->>John: Jolly good!"
+      ]
+    }
+  ]
+}
